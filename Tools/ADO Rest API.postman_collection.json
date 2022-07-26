@@ -1,0 +1,318 @@
+{
+	"info": {
+		"_postman_id": "3b36c50d-2e49-4349-a65b-0fff379ea042",
+		"name": "ADO Rest API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20171954"
+	},
+	"item": [
+		{
+			"name": "Project-CreateAndModifyAgentPool",
+			"item": [
+				{
+					"name": "GET - Projects",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{PAT}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dev.azure.com/{{organization}}/_apis/projects?api-version=6.0",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"azure",
+								"com"
+							],
+							"path": [
+								"{{organization}}",
+								"_apis",
+								"projects"
+							],
+							"query": [
+								{
+									"key": "scopeDescriptor",
+									"value": "project",
+									"disabled": true
+								},
+								{
+									"key": "subjectTypes",
+									"value": "*",
+									"disabled": true
+								},
+								{
+									"key": "api-version",
+									"value": "6.0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Groups",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{PAT}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://vssps.dev.azure.com/{{organization}}/_apis/graph/groups?api-version=6.0-preview.1&principalName=[JinLeeSandbox]\\\\JinLeeSandbox Team",
+							"protocol": "https",
+							"host": [
+								"vssps",
+								"dev",
+								"azure",
+								"com"
+							],
+							"path": [
+								"{{organization}}",
+								"_apis",
+								"graph",
+								"groups"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "6.0-preview.1"
+								},
+								{
+									"key": "principalName",
+									"value": "[JinLeeSandbox]\\\\JinLeeSandbox Team"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - SecurityRoles/Scopes/DistributedTask.GlobalAgentQueue/RoleAssignments",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{PAT}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dev.azure.com/{{organization}}/_apis/securityroles/scopes/distributedtask.globalagentqueuerole/roleassignments/resources/068d2e96-0153-4a3e-8ec5-4f16e0e90d26?api-version=7.1-preview.1",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"azure",
+								"com"
+							],
+							"path": [
+								"{{organization}}",
+								"_apis",
+								"securityroles",
+								"scopes",
+								"distributedtask.globalagentqueuerole",
+								"roleassignments",
+								"resources",
+								"068d2e96-0153-4a3e-8ec5-4f16e0e90d26"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "7.1-preview.1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT -  Update Agent Pool Permission on Project",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{PAT}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[{\r\n    \"roleName\": \"User\",\r\n    \"userId\": \"861266f7-219d-464f-9443-71af098dff0a\"\r\n}]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev.azure.com/{{organization}}/_apis/securityroles/scopes/distributedtask.globalagentqueuerole/roleassignments/resources/8961db7b-8d19-44e8-986b-f4384f42db08?api-version=7.1-preview.1",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"azure",
+								"com"
+							],
+							"path": [
+								"{{organization}}",
+								"_apis",
+								"securityroles",
+								"scopes",
+								"distributedtask.globalagentqueuerole",
+								"roleassignments",
+								"resources",
+								"8961db7b-8d19-44e8-986b-f4384f42db08"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "7.1-preview.1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Process (Agile/Scrum/etc.)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{PAT}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dev.azure.com/{{organization}}/_apis/work/processes?api-version=6.0",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"azure",
+								"com"
+							],
+							"path": [
+								"{{organization}}",
+								"_apis",
+								"work",
+								"processes"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "6.0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST - Create New Project",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{PAT}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"REST-Test-DELME\",\r\n  \"description\": \"Project created through REST API for PoC (Delete Me)\",\r\n  \"capabilities\": {\r\n    \"versioncontrol\": {\r\n      \"sourceControlType\": \"Git\"\r\n    },\r\n    \"processTemplate\": {\r\n      \"templateTypeId\": \"adcc42ab-9882-485e-a3ed-7678f01f66bc\"\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev.azure.com/{{organization}}/_apis/projects?api-version=6.0",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"azure",
+								"com"
+							],
+							"path": [
+								"{{organization}}",
+								"_apis",
+								"projects"
+							],
+							"query": [
+								{
+									"key": "api-version",
+									"value": "6.0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
