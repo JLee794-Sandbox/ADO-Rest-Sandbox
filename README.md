@@ -30,7 +30,7 @@ Through leveraging the Azure DevOps REST API, facilitate the project creation as
 
 1. [Generate a DevOps PAT](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows#create-a-pat)
     1. TODO: Narrow down the exact permissions required to make these requests
-    1. Current setup (working):
+    1. Current DevOps Pat Permissions (working):
 
         > // TODO: Narrow down exact permissions needed
         >
