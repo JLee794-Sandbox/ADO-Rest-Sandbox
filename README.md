@@ -31,19 +31,24 @@ Through leveraging the Azure DevOps REST API, facilitate the project creation as
 1. [Generate a DevOps PAT](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows#create-a-pat)
     1. TODO: Narrow down the exact permissions required to make these requests
     1. Current setup (working):
-        // TODO: Narrow down exact permissions needed
-        **_ !!! The permissions below are most likely more permissive than necessary. Use at your own risk !!! _**
+
+        > // TODO: Narrow down exact permissions needed
+        >
+        >**!!! The permissions below are most likely more permissive than necessary and were leveraged for demo purposes only. Use at your own risk !!!**
+
         1. Agent Pools: Read & Manage
         1. Project and Team: Read, write, & manage
         1. Security: Manage
         1. Tokens: Read & manage
         1. User Profile
-1. Set the Azure DevOps PAT to the `$env:PAT` environment variable
+2. Set the Azure DevOps PAT to the `$env:PAT` environment variable
+
 ```pwsh
 # Set PAT as environment var
 $env:PAT = '<your devops pat>'
 ```
-1. Invoke the script with your project variables
+
+3. Invoke the script with your project variables
     Input Arguments:
     - `$Organization`: URI of your DevOps organization (e.g `https://dev.azure.com/my-ado-org`)
     - `$ProjectName`: Name of the new project to create, or an existing project to update the project roles on.
@@ -77,4 +82,3 @@ $env:PAT = '<your devops pat>'
     - projectId
     - PAT (set as secret!!!)
     - roleDisplayName
-
