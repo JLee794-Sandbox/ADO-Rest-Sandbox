@@ -38,14 +38,11 @@ Through leveraging the Azure DevOps REST API, facilitate the project creation as
         1. Security: Manage
         1. Tokens: Read & manage
         1. User Profile
-
 1. Set the Azure DevOps PAT to the `$env:PAT` environment variable
-
 ```pwsh
 # Set PAT as environment var
 $env:PAT = '<your devops pat>'
 ```
-
 1. Invoke the script with your project variables
     Input Arguments:
     - `$Organization`: URI of your DevOps organization (e.g `https://dev.azure.com/my-ado-org`)
@@ -80,3 +77,4 @@ $env:PAT = '<your devops pat>'
     - projectId
     - PAT (set as secret!!!)
     - roleDisplayName
+
